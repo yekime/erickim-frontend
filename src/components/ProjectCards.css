@@ -38,7 +38,7 @@ hr {
 
 .cards__container {
   display: flex;
-  flex-flow: column;
+  flex-flow: column wrap;
   align-items: center;
   max-width: 1120px;
   width: 90%;
@@ -51,10 +51,16 @@ hr {
 }
 
 .cards__items {
+  /* flex-wrap: row; */
+  /* flex-basis: 300px; */
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-bottom: 24px;
 }
 
 .cards__item {
+  min-width: 300px;
+  /* flex: 1 1 160px; */
   display: flex;
   flex: 1;
   margin: 2rem 2rem;
@@ -81,11 +87,19 @@ hr {
   overflow: hidden;
 }
 
+.tabs-container {
+  /* margin-bottom: 20px; */
+  display: flex inline-block;
+}
+
 .github-tab {
-  position: absolute;
-  bottom: 0px;
-  left: 12px;
-  background-color: black;
+  display: inline-block;
+  position: relative;
+  /* padding-top: 100px; */
+  margin-left: 10px;
+  /* bottom: 0px; */
+  /* left: 12px; */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 5px 10px;
   color: white;
   border-top-right-radius: 10px;
@@ -94,15 +108,19 @@ hr {
     'Lucida Sans', Arial, sans-serif;
 }
 .github-tab:hover {
-  transform: scale(1.2);
+  background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.2);
   transition: 0.3s;
 }
 
-.demo-tab, .demo-tab-fake {
-  position: absolute;
+.demo-tab {
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
   bottom: 0px;
-  left: 120px;
-  background-color: rgb(9, 173, 23);
+  /* left: 120px; */
+  
+  background-color: rgba(78, 212, 89, 0.6);
   color: white;
   padding: 5px 10px;
   box-sizing: border-box;
@@ -111,16 +129,32 @@ hr {
   font-family: 'Collegiate', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }
-.demo-tab:hover, .demo-tab-fake { 
+.demo-tab:hover { 
   transform: scale(1.2);
-  transition: 0.3s;
+  background-color: rgba(9, 173, 23, 0.9);
+    transition: 0.3s;
 }
-.demo-tab-fake:hover::after { 
-  font-size: 10px;
-  content: " ;)";
+.link-tab {
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+  bottom: 0px;  
+  /* left: 120px; */
+  background-color: rgba(71, 76, 232, 0.6);
+  color: white;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   font-family: 'Collegiate', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }
+.link-tab:hover { 
+  background-color: rgba(71, 76, 232, 0.9);
+    transform: scale(1.2);
+  transition: 0.3s;
+}
+
 
 
 .fade-img {

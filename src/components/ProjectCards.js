@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ProjectCards.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Element } from "react-scroll";
 
 function Cards(props) {
   const [projectList, setProjectList] = useState([]);
@@ -21,8 +22,9 @@ function Cards(props) {
   // const;
 
   return (
-    <div className="cards">
+    <Element name="projects" className="cards">
       <h1>Here are some of my projects.</h1>
+
       <div className="cards__container">
         <div className="cards__wrapper">
           <ul className="cards__items">
@@ -36,31 +38,44 @@ function Cards(props) {
                         alt="Travel"
                         src={"http://127.0.0.1:8000" + projectInfo.image}
                       />
-                      <a
-                        className="github-tab"
-                        href={projectInfo.link}
-                        target="_blank"
-                      >
-                        <i className="fab fa-github" /> GitHub
-                      </a>
-                      {projectInfo.demo && (
-                        <a
-                          className="demo-tab"
-                          href={projectInfo.link}
-                          target="_blank"
-                        >
-                          <i class="fa fa-play"></i> Demo
-                        </a>
-                      )}
-                      {projectInfo.name === "My Website" && (
-                        <Link
-                          className="demo-tab"
-                          to=""
-                          onClick={onFakeDemoClick}
-                        >
-                          <i class="fa fa-play"></i> {fakeDemoLabel}
-                        </Link>
-                      )}
+                      <div className="tabs__container">
+                        {projectInfo.github && (
+                          <a
+                            className="github-tab"
+                            href={projectInfo.github}
+                            target="_blank"
+                          >
+                            <i className="fab fa-github" /> GitHub
+                          </a>
+                        )}
+                        {projectInfo.demo && (
+                          <a
+                            className="demo-tab"
+                            href={projectInfo.demo}
+                            target="_blank"
+                          >
+                            <i class="fa fa-play"></i> Demo
+                          </a>
+                        )}
+                        {projectInfo.name === "My Website" && (
+                          <Link
+                            className="demo-tab"
+                            to=""
+                            onClick={onFakeDemoClick}
+                          >
+                            <i class="fa fa-play"></i> {fakeDemoLabel}
+                          </Link>
+                        )}
+                        {projectInfo.link && (
+                          <a
+                            className="link-tab"
+                            href={projectInfo.link}
+                            target="_blank"
+                          >
+                            <i class="fa fa-external-link-alt"></i> Link
+                          </a>
+                        )}
+                      </div>
                     </figure>
 
                     <div className="cards__item__info">
@@ -77,7 +92,7 @@ function Cards(props) {
           </ul>
         </div>
       </div>
-    </div>
+    </Element>
   );
 }
 

@@ -6,10 +6,16 @@ import "./IntroSection.css";
 function IntroSection(props) {
   return (
     <div className="intro-container">
-      <video src="videos/video-1.mp4" autoPlay loop muted />
+      <video
+        className="background-video"
+        src="videos/video-1.mp4"
+        autoPlay
+        loop
+        muted
+      />
       <h1>Hi, I'm Eric</h1>
       <p>
-        I'm a Senior at Cornell
+        I'm a Senior at Cornell University
         <br />
         studying Physics and CS.
       </p>
@@ -21,7 +27,6 @@ function IntroSection(props) {
           smooth={true}
           offset={-56}
           duration={1000}
-          onClick={() => console.log("pressed!")}
         >
           <div className="btns btn--large">
             <div className="center">
