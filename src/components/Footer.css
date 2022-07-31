@@ -47,7 +47,7 @@
 }
 
 .footer-links {
-  width: 100%;
+  min-width: 100%;
   max-width: 1000px;
   display: flex;
   justify-content: center;
@@ -97,12 +97,12 @@
 /* Social Icons */
 .social-icon-link {
   color: #fff;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .social-media {
   max-width: 1000px;
-  width: 100%;
+  min-width: 100%;
 }
 
 .social-media-wrap {
@@ -144,11 +144,11 @@
   }
 
   .footer-input {
-    width: 100%;
+    min-width: 100%;
   }
 
   .btn {
-    width: 100%;
+    min-width: 100%;
   }
 
   .footer-link-wrapper {

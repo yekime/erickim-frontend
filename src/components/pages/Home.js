@@ -1,16 +1,14 @@
 import React from "react";
-import Navbar from "../Navbar";
 import "../../App.css";
-import ProjectCards from "../ProjectCards";
-import IntroSection from "../IntroSection";
-import { useRef } from "react";
+import ProjectCards from "./landing-page/ProjectCards";
+import ExperienceCards from "./landing-page/ExperienceCards";
+import IntroSection from "./landing-page/IntroSection";
 
 function Home() {
-  const cardsRef = useRef(null);
   return (
     <>
-      <Navbar />
-      <IntroSection cardsRef={cardsRef} />
+      <IntroSection />
+      <ExperienceCards />
       <ProjectCards />
     </>
   );

@@ -1,7 +1,8 @@
 :root {
   --nav-height: 56px;
-  --nav-font-color: rgb(21, 21, 21);
-  --nav-background: linear-gradient(0deg, rgba(240, 236, 236, 0.9) 0%, rgb(255, 255, 255) 100%);
+  --nav-font-color: #0B132B;
+  /* --nav-background: linear-gradient(0deg, rgba(240, 236, 236, 0.9) 0%, rgb(255, 255, 255) 100%); */
+  --nav-background: #FFF;
 }
 
 .navbar {
@@ -22,7 +23,7 @@
   justify-content: flex;
   align-items: center;
   height: var(--nav-height);
-  width: 100%;
+  min-width: 100%;
 }
 
 .navbar-logo {
@@ -94,7 +95,7 @@
   .nav-menu {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    min-width: 100%;
     height: 90vh;
     position: absolute;
     top: 56px;
@@ -114,7 +115,7 @@
   .nav-links {
     text-align: center;
     padding: 2rem;
-    width: 100%;
+    min-width: 100%;
     display: table;
   }
 
